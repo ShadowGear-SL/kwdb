@@ -165,6 +165,7 @@ allConstants = [
     Constant "AGENT" llcAgent,
     Constant "AGENT_ALWAYS_RUN" (IVal 0x1000),
     Constant "AGENT_ATTACHMENTS" (IVal 0x2),
+    Constant "AGENT_AUTOMATED" (IVal 0x4000),
     Constant "AGENT_AUTOPILOT" (IVal 0x2000),
     Constant "AGENT_AWAY" (IVal 0x40),
     Constant "AGENT_BUSY" (IVal 0x800),

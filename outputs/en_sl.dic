@@ -1,4 +1,4 @@
-11453
+11457
 rez
 slex
 slutorial
@@ -10383,6 +10383,7 @@ llList2Integer
 llList2Json
 llList2Key
 llList2List
+llList2ListSlice
 llList2ListStrided
 llList2Rot
 llList2String
@@ -10391,10 +10392,12 @@ llListen
 llListenControl
 llListenRemove
 llListFindList
+llListFindStrided
 llListInsertList
 llListRandomize
 llListReplaceList
 llListSort
+llListSortStrided
 llListStatistics
 llLoadURL
 llLog
@@ -10635,6 +10638,7 @@ ACTIVE
 AGENT
 AGENT_ALWAYS_RUN
 AGENT_ATTACHMENTS
+AGENT_AUTOMATED
 AGENT_AUTOPILOT
 AGENT_AWAY
 AGENT_BUSY

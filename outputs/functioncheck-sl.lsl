@@ -507,5 +507,8 @@ s = s + llHMAC(s,s,s);
 s = s + llSignRSA(s,s,s);
 i = llVerifyRSA(s,s,s,s);
 s = s + llReplaceSubString(s,s,s,i);
+l = llList2ListSlice(l,i,i,i,i);
+l = llListSortStrided(l,i,i,i);
+i = llListFindStrided(l,l,i,i,i);
     }
 }
