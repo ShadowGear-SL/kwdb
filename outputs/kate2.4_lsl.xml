@@ -207,6 +207,7 @@
 			<item> llGetRegionSunRotation </item>
 			<item> llGetRegionTimeDilation </item>
 			<item> llGetRegionTimeOfDay </item>
+			<item> llGetRenderMaterial </item>
 			<item> llGetRootPosition </item>
 			<item> llGetRootRotation </item>
 			<item> llGetRot </item>
@@ -428,6 +429,7 @@
 			<item> llSetLinkMedia </item>
 			<item> llSetLinkPrimitiveParams </item>
 			<item> llSetLinkPrimitiveParamsFast </item>
+			<item> llSetLinkRenderMaterial </item>
 			<item> llSetLinkTexture </item>
 			<item> llSetLinkTextureAnim </item>
 			<item> llSetLocalRot </item>
@@ -444,6 +446,7 @@
 			<item> llSetPrimURL </item>
 			<item> llSetRegionPos </item>
 			<item> llSetRemoteScriptAccessPin </item>
+			<item> llSetRenderMaterial </item>
 			<item> llSetRot </item>
 			<item> llSetScale </item>
 			<item> llSetScriptState </item>
@@ -628,6 +631,7 @@
 			<item> CHANGED_OWNER </item>
 			<item> CHANGED_REGION </item>
 			<item> CHANGED_REGION_START </item>
+			<item> CHANGED_RENDER_MATERIAL </item>
 			<item> CHANGED_SCALE </item>
 			<item> CHANGED_SHAPE </item>
 			<item> CHANGED_TELEPORT </item>
@@ -996,6 +1000,13 @@
 			<item> PRIM_FLEXIBLE </item>
 			<item> PRIM_FULLBRIGHT </item>
 			<item> PRIM_GLOW </item>
+			<item> PRIM_GLTF_ALPHA_MODE_BLEND </item>
+			<item> PRIM_GLTF_ALPHA_MODE_MASK </item>
+			<item> PRIM_GLTF_ALPHA_MODE_NONE </item>
+			<item> PRIM_GLTF_BASE_COLOR </item>
+			<item> PRIM_GLTF_EMISSIVE </item>
+			<item> PRIM_GLTF_METALLIC_ROUGHNESS </item>
+			<item> PRIM_GLTF_NORMAL </item>
 			<item> PRIM_HOLE_CIRCLE </item>
 			<item> PRIM_HOLE_DEFAULT </item>
 			<item> PRIM_HOLE_SQUARE </item>
@@ -1050,6 +1061,10 @@
 			<item> PRIM_POSITION </item>
 			<item> PRIM_POS_LOCAL </item>
 			<item> PRIM_PROJECTOR </item>
+			<item> PRIM_REFLECTION_PROBE </item>
+			<item> PRIM_REFLECTION_PROBE_BOX </item>
+			<item> PRIM_REFLECTION_PROBE_DYNAMIC </item>
+			<item> PRIM_RENDER_MATERIAL </item>
 			<item> PRIM_ROTATION </item>
 			<item> PRIM_ROT_LOCAL </item>
 			<item> PRIM_SCRIPTED_SIT_ONLY </item>
@@ -1240,6 +1255,7 @@
 			<item> SKY_MOON_TEXTURE </item>
 			<item> SKY_PLANET </item>
 			<item> SKY_RAYLEIGH_CONFIG </item>
+			<item> SKY_REFLECTION_PROBE_AMBIANCE </item>
 			<item> SKY_REFRACTION </item>
 			<item> SKY_STAR_BRIGHTNESS </item>
 			<item> SKY_SUN </item>
