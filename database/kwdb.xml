@@ -2,7 +2,7 @@
 <!--
 
 (C) Copyright 2012 Linden Research, Inc.
-(C) Copyright 2013-2023 Sei Lisa.
+(C) Copyright 2013-2024 Sei Lisa.
 (C) Copyright 2017-2023 Mako Nozaki.
 (C) Copyright 2023-2023 Alex Carpenter.
 Sei Lisa, Mako Nozaki, and Alex Carpenter are the usernames of the authors in the
@@ -98,7 +98,7 @@ Example: grid="os aa"
 
 ]>
 
-<keywords version="0.0.20231219001">
+<keywords version="0.0.20240528000">
   <!--The OpenSim/Aurora functions, constants and types are based on the following revisions:
 
       OpenSim revision 0.9.2.1
@@ -109,7 +109,7 @@ Example: grid="os aa"
   -->
 
   <!-- Grids supported and their versions -->
-  <grid id="sl" version="2023-11-07.6790647783">Second Life</grid>
+  <grid id="sl" version="2024-04-13.8669470296">Second Life</grid>
   <grid id="os" version="v0.9.2.1">OpenSimulator</grid>
   <grid id="aa" version="0049c9335f8b91ab119ce4fee5ba1d50d4f6f017">Aurora-Sim</grid>
 
@@ -335,6 +335,7 @@ Passed in the llSetStatus library function. If TRUE, object can't cross region b
   <constant name="STATUS_BLOCK_GRAB" type="integer" value="0x40" version="sl:0.2.0">
     <description lang="en">
 Passed in the llSetStatus library function. If TRUE, object can't be grabbed and physically dragged.
+This flag applies to the root only.
     </description>
   </constant>
 
@@ -2742,6 +2743,12 @@ Ignore this prim in the physics shape. This cannot be applied to the root prim.
   </constant>
 
   <constant name="PRIM_REFLECTION_PROBE_DYNAMIC" type="integer" value="2" grid="sl" version="sl:2023-11-07.6790647783">
+    <description lang="en">
+<!-- TODO: add documentation -->
+    </description>
+  </constant>
+
+  <constant name="PRIM_REFLECTION_PROBE_MIRROR" type="integer" value="4" grid="sl" version="sl:2024-04-13.8669470296">
     <description lang="en">
 <!-- TODO: add documentation -->
     </description>
@@ -5356,157 +5363,301 @@ A comma separated list of the keys in the linkset's datastore which have been de
        specified is the one where it was first seen by the maintainer. -->
   <constant name="SIM_STAT_PHYSICS_FPS" type="integer" value="1" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Physics simulation FPS.
+Physics simulation FPS.
     </description>
   </constant>
 
   <constant name="SIM_STAT_AGENT_UPDATES" type="integer" value="2" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Agent updates per second.
+Agent updates per second.
     </description>
   </constant>
 
   <constant name="SIM_STAT_FRAME_MS" type="integer" value="3" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Total frame time.
+Total frame time.
     </description>
   </constant>
 
   <constant name="SIM_STAT_NET_MS" type="integer" value="4" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Time spent in 'network' segment of simulation frame.
+Time spent in 'network' segment of simulation frame.
     </description>
   </constant>
 
   <constant name="SIM_STAT_OTHER_MS" type="integer" value="5" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Main simulation segment of frame, encapsulating task, script and misc. updates.
+Main simulation segment of frame, encapsulating task, script and misc. updates.
     </description>
   </constant>
 
   <constant name="SIM_STAT_PHYSICS_MS" type="integer" value="6" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Time spent in 'physics' segment of simulation frame.
+Time spent in 'physics' segment of simulation frame.
     </description>
   </constant>
 
   <constant name="SIM_STAT_AGENT_MS" type="integer" value="7" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Time spent in 'agent' segment of simulation frame.
+Time spent in 'agent' segment of simulation frame.
     </description>
   </constant>
 
   <constant name="SIM_STAT_IMAGE_MS" type="integer" value="8" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Time spent in 'image' segment of simulation frame.
+Time spent in 'image' segment of simulation frame.
     </description>
   </constant>
 
   <constant name="SIM_STAT_SCRIPT_MS" type="integer" value="9" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Time spent in 'script' segment of simulation frame.
+Time spent in 'script' segment of simulation frame.
     </description>
   </constant>
 
   <constant name="SIM_STAT_AGENT_COUNT" type="integer" value="10" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Number of agents in region.
+Number of agents in region.
     </description>
   </constant>
 
   <constant name="SIM_STAT_CHILD_AGENT_COUNT" type="integer" value="11" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Number of child (neighboring) agents in region.
+Number of child (neighboring) agents in region.
     </description>
   </constant>
 
   <constant name="SIM_STAT_ACTIVE_SCRIPT_COUNT" type="integer" value="12" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Number of active scripts in region.
+Number of active scripts in region.
     </description>
   </constant>
 
   <constant name="SIM_STAT_PACKETS_IN" type="integer" value="13" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Average packets in per second.
+Average packets in per second.
     </description>
   </constant>
 
   <constant name="SIM_STAT_PACKETS_OUT" type="integer" value="14" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Average packets out per second.
+Average packets out per second.
     </description>
   </constant>
 
   <constant name="SIM_STAT_ASSET_DOWNLOADS" type="integer" value="15" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Pending asset download count.
+Pending asset download count.
     </description>
   </constant>
 
   <constant name="SIM_STAT_ASSET_UPLOADS" type="integer" value="16" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Pending asset upload count.
+Pending asset upload count.
     </description>
   </constant>
 
   <constant name="SIM_STAT_UNACKED_BYTES" type="integer" value="17" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Total unacknowledged bytes.
+Total unacknowledged bytes.
     </description>
   </constant>
 
   <constant name="SIM_STAT_PHYSICS_STEP_MS" type="integer" value="18" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Average physics step time.
+Average physics step time.
     </description>
   </constant>
 
   <constant name="SIM_STAT_PHYSICS_SHAPE_MS" type="integer" value="19" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Average physics 'shape' segment update time.
+Average physics 'shape' segment update time.
     </description>
   </constant>
 
   <constant name="SIM_STAT_PHYSICS_OTHER_MS" type="integer" value="20" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Average physics 'other' segment update time.
+Average physics 'other' segment update time.
     </description>
   </constant>
 
   <constant name="SIM_STAT_SCRIPT_EPS" type="integer" value="21" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Script events per second.
+Script events per second.
     </description>
   </constant>
 
   <constant name="SIM_STAT_SPARE_MS" type="integer" value="22" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Spare time left after frame.
+Spare time left after frame.
     </description>
   </constant>
 
   <constant name="SIM_STAT_SLEEP_MS" type="integer" value="23" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Time spent sleeping.
+Time spent sleeping.
     </description>
   </constant>
 
   <constant name="SIM_STAT_IO_PUMP_MS" type="integer" value="24" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- PumpIO time.
+PumpIO time.
     </description>
   </constant>
 
   <constant name="SIM_STAT_SCRIPT_RUN_PCT" type="integer" value="25" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
- Percent of scripts run during frame.
+Percent of scripts run during frame.
     </description>
   </constant>
 
   <constant name="SIM_STAT_AI_MS" type="integer" value="26" grid="sl" version="sl:2023-03-24.579022">
     <description lang="en">
 Time spent on AI step.
+    </description>
+  </constant>
+
+  <constant name="REZ_PARAM" type="integer" value="0" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Used with llRezObjectWithParams to set the parameter to pass to the rezzed object. Similar to the last parameter of llRezObject/llRezAtRoot. Followed by: integer param.
+    </description>
+  </constant>
+
+  <constant name="REZ_FLAGS" type="integer" value="1" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Used with llRezObjectWithParams to set flags for the rezzed object (a bitwise combination of REZ_FLAG_*). Followed by: integer flags.
+    </description>
+  </constant>
+
+  <constant name="REZ_FLAG_TEMP" type="integer" value="1" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Flag for REZ_FLAGS that sets the rezzed object to temporary.
+    </description>
+  </constant>
+
+  <constant name="REZ_FLAG_PHYSICAL" type="integer" value="2" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Flag for REZ_FLAGS that sets the rezzed object to physical.
+    </description>
+  </constant>
+
+  <constant name="REZ_FLAG_PHANTOM" type="integer" value="4" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Flag for REZ_FLAGS that sets the rezzed object to phantom.
+    </description>
+  </constant>
+
+  <constant name="REZ_FLAG_DIE_ON_COLLIDE" type="integer" value="8" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Flag for REZ_FLAGS that will make the rezzed object die when it collides with another object.
+    </description>
+  </constant>
+
+  <constant name="REZ_FLAG_DIE_ON_NOENTRY" type="integer" value="16" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Flag for REZ_FLAGS that will make the rezzed object die if it enters a parcel that doesn't allow entry of objects.
+    </description>
+  </constant>
+
+  <constant name="REZ_FLAG_NO_COLLIDE_OWNER" type="integer" value="32" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Flag for REZ_FLAGS that will make the rezzed object not to trigger collision events or damage when it collides with its owner.
+    </description>
+  </constant>
+
+  <constant name="REZ_FLAG_NO_COLLIDE_FAMILY" type="integer" value="64" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Flag for REZ_FLAGS that will make the rezzed object not to trigger collision events when it collides with other objets rezzed by the same rezzer.
+    </description>
+  </constant>
+
+  <constant name="REZ_FLAG_BLOCK_GRAB_OBJECT" type="integer" value="128" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Flag for REZ_FLAGS that sets the STATUS_BLOCK_GRAB_OBJECT of the rezzed object to TRUE, thus blocking the possibility of grabbing and moving around the object.
+    </description>
+  </constant>
+
+  <constant name="REZ_POS" type="integer" value="2" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Used with llRezObjectWithParams to set the position the object will be rezzed at. Followed by: vector pos, integer relative, integer at_root.
+    </description>
+  </constant>
+
+  <constant name="REZ_ROT" type="integer" value="3" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Used with llRezObjectWithParams to set the rotation the object will be rezzed with. Followed by: rotation rot, integer relative.
+    </description>
+  </constant>
+
+  <constant name="REZ_VEL" type="integer" value="4" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Used with llRezObjectWithParams to set the initial velocity of the object being rezzed. Followed by: vector velocity, integer local, integer inherit.
+    </description>
+  </constant>
+
+  <constant name="REZ_ACCEL" type="integer" value="5" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Used with llRezObjectWithParams to set the force to apply to the object being rezzed. Followed by: vector force, integer local.
+    </description>
+  </constant>
+
+  <constant name="REZ_OMEGA" type="integer" value="7" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Used with llRezObjectWithParams to set the target omega (angular velocity) of the object. Followed by: vector axis, integer local, float spin, float gain.
+    </description>
+  </constant>
+
+  <constant name="REZ_DAMAGE" type="integer" value="8" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Used with llRezObjectWithParams to set the damage that the object will cause when colliding with an agent. Followed by: float damage.
+    </description>
+  </constant>
+
+  <constant name="REZ_SOUND" type="integer" value="9" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Used with llRezObjectWithParams to attach a sound to the rezzed object. Followed by: string sound, float volume, integer loop.
+    </description>
+  </constant>
+
+  <constant name="REZ_SOUND_COLLIDE" type="integer" value="10" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Used with llRezObjectWithParams to set the collision sound of the rezzed object. Followed by: string sound, float volume.
+    </description>
+  </constant>
+
+  <constant name="REZ_LOCK_AXES" type="integer" value="11" grid="sl" version="sl:2024-01-19.7590161929">
+    <description lang="en">
+Used with llRezObjectWithParams to lock an object's rotation over the given axes. The nonzero components of the vector will prevent rotation over the corresponding axes. Followed by: vector axes.
+    </description>
+  </constant>
+
+  <constant name="PRIM_SIT_FLAGS" type="integer" value="50" grid="sl" version="sl:2024-02-21.7995320426">
+    <description lang="en">
+Used with the llSetPrimitiveParams family of functions to set or get the sit flags of the current or the given prim. Followed by flags (an integer combining SIT_FLAG_* constants).
+    </description>
+  </constant>
+
+  <constant name="SIT_FLAG_SIT_TARGET" type="integer" value="1" grid="sl" version="sl:2024-02-21.7995320426">
+    <description lang="en">
+Used with llGetLinkSitFlags to indicate whether the given prim has a sit target set.
+    </description>
+  </constant>
+
+  <constant name="SIT_FLAG_ALLOW_UNSIT" type="integer" value="2" grid="sl" version="sl:2024-02-21.7995320426">
+    <description lang="en">
+Used with llGet/SetLinkSitFlags to allow an avatar to unsit from the given prim. Only applies to avatars that were sat with llSitOnLink.
+    </description>
+  </constant>
+
+  <constant name="SIT_FLAG_SCRIPTED_ONLY" type="integer" value="4" grid="sl" version="sl:2024-02-21.7995320426">
+    <description lang="en">
+Used with llGet/SetLinkSitFlags to prevent (or remove the restriction for) an avatar from manually sitting on a prim.
+    </description>
+  </constant>
+
+  <constant name="SIT_FLAG_NO_COLLIDE" type="integer" value="16" grid="sl" version="sl:2024-02-21.7995320426">
+    <description lang="en">
+Used with llGet/SetLinkSitFlags to disable or enable the collision volume for an agent that sits on the given prim.
     </description>
   </constant>
 
@@ -5518,9 +5669,15 @@ Indicates an empty key
     </description>
   </constant>
 
-  <constant name="EOF" type="string" value="&#x0A;&#x0A;&#x0A;">
+  <constant name="EOF" type="string" value="\n\n\n">
     <description lang="en">
-Indicates the last line of a notecard was read
+Indicates an attempt to read past the last line of a notecard.
+    </description>
+  </constant>
+
+  <constant name="NAK" type="string" value="\n\x15\n" grid="sl" version="sl:2024-02-21.7995320426">
+    <description lang="en">
+Used with llGetNotecardLineSync, indicates that the given notecard could not be read, was not cached or was dropped from the cache.
     </description>
   </constant>
 
@@ -10641,7 +10798,7 @@ Returns the number of keys in the linkset datastore that match the pattern suppl
     <param type="string" name="pattern"/>
     <param type="string" name="pass"/>
     <description lang="en">
-Finds and attempts to delete all keys in the data store that match pattern. This function will delete protected key-value pairs only if the matching pass phrase is passed in the pass parameter. The function returns a list, the first entry in the list is the number of keys deleted, the second entry in the list is the number of keys that could not be deleted due to a non-matching pass phrase. If this function successfully deletes any keys from the datastore it will trigger a linkset_data event with the type of LINKSET_DATA_MULTIDELETE, the key name will consist of a comma separated list of the key names removed from the datastore.
+Finds and attempts to delete all keys in the data store that match pattern. This function will delete protected key-value pairs only if the matching pass phrase is passed in the pass parameter. The function returns a list, the first entry in the list is the number of keys deleted, the second entry in the list is the number of keys that could not be deleted due to a non-matching pass phrase. If this function successfully deletes any keys from the datastore it will trigger a linkset_data event with the type of LINKSETDATA_MULTIDELETE, the key name will consist of a comma separated list of the key names removed from the datastore.
     </description>
   </function>
 
@@ -10780,7 +10937,88 @@ llListSortStrided is llListSort with the added parameter of stride_index, adding
     <param type="integer" name="end"/>
     <param type="integer" name="stride"/>
     <description lang="en">
-Returns the integer index of the first instance of test in src matching conditions.
+Returns the integer index of the first instance of test in the strided list src with the given stride, within the specified range.
+    </description>
+  </function>
+
+  <function name="llListFindListNext" type="integer" grid="sl" version="sl:2024-01-19.7590161929">
+    <param type="list" name="src"/>
+    <param type="list" name="test"/>
+    <param type="integer" name="n"/>
+    <description lang="en">
+Returns the integer index of the nth instance of test in src.
+    </description>
+  </function>
+
+  <function name="llIsFriend" type="integer" grid="sl" version="sl:2024-01-19.7590161929">
+    <param type="key" name="agent"/>
+    <description lang="en">
+Returns TRUE or FALSE depending on whether the given agent is in the friends list of the prim's owner or not. Either the given agent or the prim's owner need to be in the region where the script is running, otherwise it always returns FALSE.
+    </description>
+  </function>
+
+  <function name="llGetInventoryDesc" type="string" grid="sl" version="sl:2024-01-19.7590161929">
+    <param type="string" name="itemname"/>
+    <description lang="en">
+Returns the description of the item named itemname which is in the contents of the prim the script is in. If itemname does not exist in the prim's inventory, an error is shouted in DEBUG_CHANNEL and the result is an empty string.
+    </description>
+  </function>
+
+  <function name="llRezObjectWithParams" grid="sl" version="sl:2024-01-19.7590161929">
+    <param type="string" name="itemname"/>
+    <param type="list" name="params"/>
+    <description lang="en">
+Rezzes object itemname with the parameters given in the params list.
+    </description>
+  </function>
+
+  <function name="llSetLinkSitFlags" grid="sl" version="sl:2024-02-21.7995320426">
+    <param type="integer" name="link"/>
+    <param type="integer" name="flags"/>
+    <description lang="en">
+Sets the sit flags (SIT_FLAG_* constants) of a linked prim.
+    </description>
+  </function>
+
+  <function name="llGetLinkSitFlags" grid="sl" type="integer" version="sl:2024-02-21.7995320426">
+    <param type="integer" name="link"/>
+    <description lang="en">
+Returns the sit flags (a combination of SIT_FLAG_* constants) of a linked prim.
+    </description>
+  </function>
+
+  <function name="llComputeHash" type="string" grid="sl" version="sl:2024-02-21.7995320426">
+    <param type="string" name="data"/>
+    <param type="string" name="algorithm"/>
+    <description lang="en">
+Computes the hash of the given data using the given hash algorithm, which is one of "md5", "md5_sha1", "sha1", "sha224", "sha256", "sha384", or "sha512".
+    </description>
+  </function>
+
+  <function name="llGetCameraAspect" type="float" grid="sl" version="sl:2024-02-21.7995320426">
+    <description lang="en">
+Gets the aspect ratio (width divided by height) of the avatar's window. Needs the PERMISSION_TRACK_CAMERA permission to work.
+    </description>
+  </function>
+
+  <function name="llGetCameraFOV" type="float" grid="sl" version="sl:2024-02-21.7995320426">
+    <description lang="en">
+Gets the field of view (FOV), in radians, of the avatar's camera. Needs the PERMISSION_TRACK_CAMERA permission to work.
+    </description>
+  </function>
+
+  <function name="llGetNotecardLineSync" type="string" grid="sl" version="sl:2024-02-21.7995320426">
+    <param type="string" name="name"/>
+    <param type="integer" name="line"/>
+    <description lang="en">
+Returns the requested line of the notecard with the given name, or the constant NAK if the notecard does not exist, is not cached or is dropped from the cache. Returns the constant EOF if the requested line is past the end of the notecard.
+    </description>
+  </function>
+
+  <function name="llWorldPosToHUD" type="vector" grid="sl" version="sl:2024-02-21.7995320426">
+    <param type="vector" name="pos"/>
+    <description lang="en">
+Converts the given position to HUD coordinates. The returned vector's X coordinate will be 1.0 if the object is in front of the camera and -1.0 otherwise. Needs the PERMISSION_TRACK_CAMERA permission to work, otherwise it returns ZERO_VECTOR. Works with HUD attachments only.
     </description>
   </function>
 

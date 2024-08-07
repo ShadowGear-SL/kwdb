@@ -1,4 +1,4 @@
-11481
+11518
 rez
 slex
 slutorial
@@ -10163,6 +10163,7 @@ llClearLinkMedia
 llClearPrimMedia
 llCollisionFilter
 llCollisionSound
+llComputeHash
 llCos
 llCreateCharacter
 llCreateKeyValue
@@ -10219,6 +10220,8 @@ llGetAnimationOverride
 llGetAttached
 llGetAttachedList
 llGetBoundingBox
+llGetCameraAspect
+llGetCameraFOV
 llGetCameraPos
 llGetCameraRot
 llGetCenterOfMass
@@ -10242,6 +10245,7 @@ llGetGMTclock
 llGetHTTPHeader
 llGetInventoryAcquireTime
 llGetInventoryCreator
+llGetInventoryDesc
 llGetInventoryKey
 llGetInventoryName
 llGetInventoryNumber
@@ -10255,6 +10259,7 @@ llGetLinkName
 llGetLinkNumber
 llGetLinkNumberOfSides
 llGetLinkPrimitiveParams
+llGetLinkSitFlags
 llGetListEntryType
 llGetListLength
 llGetLocalPos
@@ -10268,6 +10273,7 @@ llGetMoonDirection
 llGetMoonRotation
 llGetNextEmail
 llGetNotecardLine
+llGetNotecardLineSync
 llGetNumberOfNotecardLines
 llGetNumberOfPrims
 llGetNumberOfSides
@@ -10352,6 +10358,7 @@ llHTTPResponse
 llInsertString
 llInstantMessage
 llIntegerToBase64
+llIsFriend
 llJson2List
 llJsonGetValue
 llJsonSetValue
@@ -10395,6 +10402,7 @@ llListen
 llListenControl
 llListenRemove
 llListFindList
+llListFindListNext
 llListFindStrided
 llListInsertList
 llListRandomize
@@ -10470,6 +10478,7 @@ llReturnObjectsByID
 llReturnObjectsByOwner
 llRezAtRoot
 llRezObject
+llRezObjectWithParams
 llRot2Angle
 llRot2Axis
 llRot2Euler
@@ -10515,6 +10524,7 @@ llSetLinkMedia
 llSetLinkPrimitiveParams
 llSetLinkPrimitiveParamsFast
 llSetLinkRenderMaterial
+llSetLinkSitFlags
 llSetLinkTexture
 llSetLinkTextureAnim
 llSetLocalRot
@@ -10599,6 +10609,7 @@ llWanderWithin
 llWater
 llWhisper
 llWind
+llWorldPosToHUD
 llXorBase64
 at_rot_target
 at_target
@@ -10933,6 +10944,7 @@ MASK_EVERYONE
 MASK_GROUP
 MASK_NEXT
 MASK_OWNER
+NAK
 NULL_KEY
 OBJECT_ACCOUNT_LEVEL
 OBJECT_ANIMATED_COUNT
@@ -11167,6 +11179,7 @@ PRIM_PROJECTOR
 PRIM_REFLECTION_PROBE
 PRIM_REFLECTION_PROBE_BOX
 PRIM_REFLECTION_PROBE_DYNAMIC
+PRIM_REFLECTION_PROBE_MIRROR
 PRIM_RENDER_MATERIAL
 PRIM_ROTATION
 PRIM_ROT_LOCAL
@@ -11184,6 +11197,7 @@ PRIM_SHINY_HIGH
 PRIM_SHINY_LOW
 PRIM_SHINY_MEDIUM
 PRIM_SHINY_NONE
+PRIM_SIT_FLAGS
 PRIM_SIT_TARGET
 PRIM_SIZE
 PRIM_SLICE
@@ -11299,6 +11313,25 @@ REGION_FLAG_SANDBOX
 REQUIRE_LINE_OF_SIGHT
 RESTITUTION
 REVERSE
+REZ_ACCEL
+REZ_DAMAGE
+REZ_FLAGS
+REZ_FLAG_BLOCK_GRAB_OBJECT
+REZ_FLAG_DIE_ON_COLLIDE
+REZ_FLAG_DIE_ON_NOENTRY
+REZ_FLAG_NO_COLLIDE_FAMILY
+REZ_FLAG_NO_COLLIDE_OWNER
+REZ_FLAG_PHANTOM
+REZ_FLAG_PHYSICAL
+REZ_FLAG_TEMP
+REZ_LOCK_AXES
+REZ_OMEGA
+REZ_PARAM
+REZ_POS
+REZ_ROT
+REZ_SOUND
+REZ_SOUND_COLLIDE
+REZ_VEL
 ROTATE
 SCALE
 SCRIPTED
@@ -11329,6 +11362,10 @@ SIM_STAT_SCRIPT_RUN_PCT
 SIM_STAT_SLEEP_MS
 SIM_STAT_SPARE_MS
 SIM_STAT_UNACKED_BYTES
+SIT_FLAG_ALLOW_UNSIT
+SIT_FLAG_NO_COLLIDE
+SIT_FLAG_SCRIPTED_ONLY
+SIT_FLAG_SIT_TARGET
 SIT_INVALID_AGENT
 SIT_INVALID_LINK
 SIT_INVALID_OBJECT
